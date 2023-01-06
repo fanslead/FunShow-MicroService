@@ -1,0 +1,79 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "FunShow.IdentityService.Domain.Shared": {
+      "path": "src/FunShow.IdentityService.Domain.Shared/FunShow.IdentityService.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "FunShow.IdentityService.Domain": {
+      "path": "src/FunShow.IdentityService.Domain/FunShow.IdentityService.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "FunShow.IdentityService.Application.Contracts": {
+      "path": "src/FunShow.IdentityService.Application.Contracts/FunShow.IdentityService.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "FunShow.IdentityService.Application": {
+      "path": "src/FunShow.IdentityService.Application/FunShow.IdentityService.Application.abppkg.json",
+      "folder": "src"
+    },
+    "FunShow.IdentityService.EntityFrameworkCore": {
+      "path": "src/FunShow.IdentityService.EntityFrameworkCore/FunShow.IdentityService.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "FunShow.IdentityService.MongoDB": {
+      "path": "src/FunShow.IdentityService.MongoDB/FunShow.IdentityService.MongoDB.abppkg.json",
+      "folder": "src"
+    },
+    "FunShow.IdentityService.HttpApi": {
+      "path": "src/FunShow.IdentityService.HttpApi/FunShow.IdentityService.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "FunShow.IdentityService.HttpApi.Client": {
+      "path": "src/FunShow.IdentityService.HttpApi.Client/FunShow.IdentityService.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "FunShow.IdentityService.TestBase": {
+      "path": "test/FunShow.IdentityService.TestBase/FunShow.IdentityService.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "FunShow.IdentityService.EntityFrameworkCore.Tests": {
+      "path": "test/FunShow.IdentityService.EntityFrameworkCore.Tests/FunShow.IdentityService.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FunShow.IdentityService.MongoDB.Tests": {
+      "path": "test/FunShow.IdentityService.MongoDB.Tests/FunShow.IdentityService.MongoDB.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FunShow.IdentityService.Domain.Tests": {
+      "path": "test/FunShow.IdentityService.Domain.Tests/FunShow.IdentityService.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FunShow.IdentityService.Application.Tests": {
+      "path": "test/FunShow.IdentityService.Application.Tests/FunShow.IdentityService.Application.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FunShow.IdentityService.HttpApi.Host": {
+      "path": "host/FunShow.IdentityService.HttpApi.Host/FunShow.IdentityService.HttpApi.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FunShow.IdentityService.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/FunShow.IdentityService.HttpApi.Client.ConsoleTestApp/FunShow.IdentityService.HttpApi.Client.ConsoleTestApp.abppkg.json",
+      "folder": "test"
+    },
+    "FunShow.IdentityService.AuthServer": {
+      "path": "host/FunShow.IdentityService.AuthServer/FunShow.IdentityService.AuthServer.abppkg.json",
+      "folder": "host"
+    },
+    "FunShow.IdentityService.Host.Shared": {
+      "path": "host/FunShow.IdentityService.Host.Shared/FunShow.IdentityService.Host.Shared.abppkg.json",
+      "folder": "host"
+    }
+  }
+}

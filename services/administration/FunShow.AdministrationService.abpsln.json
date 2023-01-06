@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "FunShow.AdministrationService": {
+      "path": "FunShow.AdministrationService.abpmdl.json"
+    }
+  }
+}

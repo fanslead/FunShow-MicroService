@@ -1,0 +1,79 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {},
+      "host": {}
+    }
+  },
+  "packages": {
+    "FunShow.AdministrationService.Domain.Shared": {
+      "path": "src/FunShow.AdministrationService.Domain.Shared/FunShow.AdministrationService.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "FunShow.AdministrationService.Domain": {
+      "path": "src/FunShow.AdministrationService.Domain/FunShow.AdministrationService.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "FunShow.AdministrationService.Application.Contracts": {
+      "path": "src/FunShow.AdministrationService.Application.Contracts/FunShow.AdministrationService.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "FunShow.AdministrationService.Application": {
+      "path": "src/FunShow.AdministrationService.Application/FunShow.AdministrationService.Application.abppkg.json",
+      "folder": "src"
+    },
+    "FunShow.AdministrationService.EntityFrameworkCore": {
+      "path": "src/FunShow.AdministrationService.EntityFrameworkCore/FunShow.AdministrationService.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "FunShow.AdministrationService.MongoDB": {
+      "path": "src/FunShow.AdministrationService.MongoDB/FunShow.AdministrationService.MongoDB.abppkg.json",
+      "folder": "src"
+    },
+    "FunShow.AdministrationService.HttpApi": {
+      "path": "src/FunShow.AdministrationService.HttpApi/FunShow.AdministrationService.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "FunShow.AdministrationService.HttpApi.Client": {
+      "path": "src/FunShow.AdministrationService.HttpApi.Client/FunShow.AdministrationService.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "FunShow.AdministrationService.TestBase": {
+      "path": "test/FunShow.AdministrationService.TestBase/FunShow.AdministrationService.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "FunShow.AdministrationService.EntityFrameworkCore.Tests": {
+      "path": "test/FunShow.AdministrationService.EntityFrameworkCore.Tests/FunShow.AdministrationService.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FunShow.AdministrationService.MongoDB.Tests": {
+      "path": "test/FunShow.AdministrationService.MongoDB.Tests/FunShow.AdministrationService.MongoDB.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FunShow.AdministrationService.Domain.Tests": {
+      "path": "test/FunShow.AdministrationService.Domain.Tests/FunShow.AdministrationService.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FunShow.AdministrationService.Application.Tests": {
+      "path": "test/FunShow.AdministrationService.Application.Tests/FunShow.AdministrationService.Application.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FunShow.AdministrationService.HttpApi.Host": {
+      "path": "host/FunShow.AdministrationService.HttpApi.Host/FunShow.AdministrationService.HttpApi.Host.abppkg.json",
+      "folder": "host"
+    },
+    "FunShow.AdministrationService.HttpApi.Client.ConsoleTestApp": {
+      "path": "test/FunShow.AdministrationService.HttpApi.Client.ConsoleTestApp/FunShow.AdministrationService.HttpApi.Client.ConsoleTestApp.abppkg.json",
+      "folder": "test"
+    },
+    "FunShow.AdministrationService.AuthServer": {
+      "path": "host/FunShow.AdministrationService.AuthServer/FunShow.AdministrationService.AuthServer.abppkg.json",
+      "folder": "host"
+    },
+    "FunShow.AdministrationService.Host.Shared": {
+      "path": "host/FunShow.AdministrationService.Host.Shared/FunShow.AdministrationService.Host.Shared.abppkg.json",
+      "folder": "host"
+    }
+  }
+}

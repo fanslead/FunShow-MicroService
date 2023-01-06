@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <Import Project="..\..\..\..\common.props" />
+
+    <PropertyGroup>
+        <TargetFramework>net7.0</TargetFramework>
+        <GenerateEmbeddedFilesManifest>true</GenerateEmbeddedFilesManifest>
+        <RootNamespace>FunShow.IdentityService</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Volo.Abp.VirtualFileSystem" Version="7.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="..\..\FunShow.IdentityService.abpmdl.json" />
+      <EmbeddedResource Include="..\..\FunShow.IdentityService.abpmdl.json" />
+    </ItemGroup>
+
+</Project>

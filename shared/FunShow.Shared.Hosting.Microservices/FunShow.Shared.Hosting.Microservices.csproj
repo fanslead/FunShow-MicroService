@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FunShow.Shared.Hosting.AspNetCore\FunShow.Shared.Hosting.AspNetCore.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+      <PackageReference Include="Microsoft.AspNetCore.DataProtection.StackExchangeRedis" Version="7.0.1" />
+      <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="7.0.1" />
+      <PackageReference Include="DistributedLock.Redis" Version="1.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+      <PackageReference Include="Volo.Abp.AspNetCore.MultiTenancy" Version="7.0.0" />
+      <PackageReference Include="Volo.Abp.EventBus.RabbitMQ" Version="7.0.0" />
+      <PackageReference Include="Volo.Abp.BackgroundJobs.RabbitMQ" Version="7.0.0" />
+      <PackageReference Include="Volo.Abp.Caching.StackExchangeRedis" Version="7.0.0" />
+      <PackageReference Include="Volo.Abp.DistributedLocking" Version="7.0.0" />
+      <PackageReference Include="Volo.Abp.EntityFrameworkCore" Version="7.0.0" />
+  </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\..\services\administration\src\FunShow.AdministrationService.EntityFrameworkCore\FunShow.AdministrationService.EntityFrameworkCore.csproj" />
+    </ItemGroup>
+
+</Project>

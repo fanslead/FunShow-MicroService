@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<Import Project="..\..\..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<RootNamespace>FunShow.AdministrationService</RootNamespace>
+		<PreserveCompilationReferences>true</PreserveCompilationReferences>
+		<UserSecretsId>FunShow.AdministrationService-c2d31439-b723-48e2-b061-5ebd7aeb6010</UserSecretsId>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="7.0.1">
+			<PrivateAssets>all</PrivateAssets>
+			<IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+		</PackageReference>
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\..\..\..\shared\FunShow.Shared.Localization\FunShow.Shared.Localization.csproj" />
+		<ProjectReference Include="..\..\..\..\shared\FunShow.Shared.Hosting.Microservices\FunShow.Shared.Hosting.Microservices.csproj" />
+		<ProjectReference Include="..\FunShow.AdministrationService.Application\FunShow.AdministrationService.Application.csproj" />
+		<ProjectReference Include="..\FunShow.AdministrationService.EntityFrameworkCore\FunShow.AdministrationService.EntityFrameworkCore.csproj" />
+		<ProjectReference Include="..\FunShow.AdministrationService.HttpApi\FunShow.AdministrationService.HttpApi.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Remove="Logs\**" />
+		<Content Remove="Logs\**" />
+		<EmbeddedResource Remove="Logs\**" />
+		<None Remove="Logs\**" />
+	</ItemGroup>
+
+</Project>

@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <RootNamespace>FunShow.IdentityService</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="7.0.0" />
+    <ProjectReference Include="..\FunShow.IdentityService.Application.Contracts\FunShow.IdentityService.Application.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

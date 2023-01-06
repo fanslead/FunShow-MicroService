@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>net7.0</TargetFramework>
+		<RootNamespace>FunShow.AdministrationService</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Volo.Abp.AutoMapper" Version="7.0.0" />
+		<PackageReference Include="Volo.Abp.Ddd.Application" Version="7.0.0" />
+		<PackageReference Include="Volo.Abp.PermissionManagement.Application" Version="7.0.0" />
+		<PackageReference Include="Volo.Abp.FeatureManagement.Application" Version="7.0.0" />
+		<PackageReference Include="Volo.Abp.SettingManagement.Application" Version="7.0.0" />
+		<PackageReference Include="Volo.Abp.TenantManagement.Application" Version="7.0.0" />
+		<ProjectReference Include="..\FunShow.AdministrationService.Application.Contracts\FunShow.AdministrationService.Application.Contracts.csproj" />
+		<ProjectReference Include="..\FunShow.AdministrationService.Domain\FunShow.AdministrationService.Domain.csproj" />
+	</ItemGroup>
+
+</Project>

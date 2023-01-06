@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<Import Project="..\..\..\..\common.props" />
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<RootNamespace>FunShow.AdministrationService</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Volo.Abp.Http.Client" Version="7.0.0" />
+		<PackageReference Include="Volo.Abp.PermissionManagement.HttpApi.Client" Version="7.0.0" />
+		<PackageReference Include="Volo.Abp.FeatureManagement.HttpApi.Client" Version="7.0.0" />
+		<PackageReference Include="Volo.Abp.SettingManagement.HttpApi.Client" Version="7.0.0" />
+		<ProjectReference Include="..\FunShow.AdministrationService.Application.Contracts\FunShow.AdministrationService.Application.Contracts.csproj" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<EmbeddedResource Include="**\*generate-proxy.json" />
+		<Content Remove="**\*generate-proxy.json" />
+	</ItemGroup>
+
+</Project>

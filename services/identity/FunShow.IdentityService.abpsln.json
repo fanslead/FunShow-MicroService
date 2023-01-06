@@ -1,0 +1,7 @@
+{
+  "modules": {
+    "FunShow.IdentityService": {
+      "path": "FunShow.IdentityService.abpmdl.json"
+    }
+  }
+}
