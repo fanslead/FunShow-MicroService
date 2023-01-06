@@ -11,7 +11,7 @@ using Volo.Abp.Identity;
 
 namespace FunShow.AdministrationService;
 [DependsOn(
-typeof(AbpDddDomainModule),
+    typeof(AbpDddDomainModule),
     typeof(AbpIdentityDomainModule),
     typeof(AdministrationServiceDomainSharedModule),
     typeof(AbpPermissionManagementDomainModule),

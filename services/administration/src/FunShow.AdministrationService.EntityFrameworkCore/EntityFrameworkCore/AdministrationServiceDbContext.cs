@@ -7,9 +7,8 @@ using Volo.Abp.PermissionManagement;
 using Volo.Abp.PermissionManagement.EntityFrameworkCore;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.SettingManagement.EntityFrameworkCore;
-using Volo.Abp.TenantManagement.EntityFrameworkCore;
 using Volo.Abp.TenantManagement;
-using Volo.Abp.Domain.Repositories;
+using Volo.Abp.TenantManagement.EntityFrameworkCore;
 
 namespace FunShow.AdministrationService.EntityFrameworkCore;
 
@@ -48,7 +47,6 @@ public class AdministrationServiceDbContext : AbpDbContext<AdministrationService
 
     public DbSet<TenantConnectionString> TenantConnectionStrings { get; set; }
 
-    protected IRepository<Tenant> TenantRepository { get; }
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);

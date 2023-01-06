@@ -360,16 +360,16 @@ MigrationBackup/
 /etc/prometheus/storage/*
 /etc/elasticsearch/data/*
 /etc/grafana/storage/*
-/src/applications/Walk.AuthServer/Logs/*
-/src/microservices/identity/Walk.IdentityService.HttpApi.Host/Logs/*
-/src/applications/Walk.Web/Logs/*
-/src/gateways/Walk.WebGateway/Logs/*
-/src/microservices/administration/Walk.AdministrationService.Host/Logs/*
-/src/gateways/Walk.InternalGateway/Logs/*
-/src/microservices/saas/Walk.SaasService/Logs/*
-/src/gateways/Walk.PublicWebGateway/Logs/*
-/src/applications/Walk.PublicWeb/Logs/*
-/src/microservices/product/Walk.ProductService.HttpApi.Host/Logs/*
+/src/applications/FunShow.AuthServer/Logs/*
+/src/microservices/identity/FunShow.IdentityService.HttpApi.Host/Logs/*
+/src/applications/FunShow.Web/Logs/*
+/src/gateways/FunShow.WebGateway/Logs/*
+/src/microservices/administration/FunShow.AdministrationService.Host/Logs/*
+/src/gateways/FunShow.InternalGateway/Logs/*
+/src/microservices/saas/FunShow.SaasService/Logs/*
+/src/gateways/FunShow.PublicWebGateway/Logs/*
+/src/applications/FunShow.PublicWeb/Logs/*
+/src/microservices/product/FunShow.ProductService.HttpApi.Host/Logs/*
 
 # Use abp install-libs to restore.
 **/wwwroot/libs/*

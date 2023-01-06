@@ -33,7 +33,7 @@ namespace FunShow.Shared.Hosting.AspNetCore
                 //     {
                 //         AutoRegisterTemplate = true,
                 //         AutoRegisterTemplateVersion = AutoRegisterTemplateVersion.ESv6,
-                //         IndexFormat = "Walk-log-{0:yyyy.MM}"
+                //         IndexFormat = "FunShow-log-{0:yyyy.MM}"
                 //     })
                 .WriteTo.Async(c => c.Console())
                 .CreateLogger();

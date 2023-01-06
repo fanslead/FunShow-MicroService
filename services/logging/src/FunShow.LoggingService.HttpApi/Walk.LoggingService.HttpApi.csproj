@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <Import Project="..\..\..\..\common.props" />
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <RootNamespace>FunShow.LoggingService</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="6.0.1" />
+    <ProjectReference Include="..\FunShow.LoggingService.Application.Contracts\FunShow.LoggingService.Application.Contracts.csproj" />
+  </ItemGroup>
+
+</Project>

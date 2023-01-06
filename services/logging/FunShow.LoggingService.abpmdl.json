@@ -1,0 +1,58 @@
+{
+  "folders": {
+    "items": {
+      "src": {},
+      "test": {}
+    }
+  },
+  "packages": {
+    "FunShow.LoggingService.Domain.Shared": {
+      "path": "src/FunShow.LoggingService.Domain.Shared/FunShow.LoggingService.Domain.Shared.abppkg.json",
+      "folder": "src"
+    },
+    "FunShow.LoggingService.Application.Contracts": {
+      "path": "src/FunShow.LoggingService.Application.Contracts/FunShow.LoggingService.Application.Contracts.abppkg.json",
+      "folder": "src"
+    },
+    "FunShow.LoggingService.Domain": {
+      "path": "src/FunShow.LoggingService.Domain/FunShow.LoggingService.Domain.abppkg.json",
+      "folder": "src"
+    },
+    "FunShow.LoggingService.Application": {
+      "path": "src/FunShow.LoggingService.Application/FunShow.LoggingService.Application.abppkg.json",
+      "folder": "src"
+    },
+    "FunShow.LoggingService.EntityFrameworkCore": {
+      "path": "src/FunShow.LoggingService.EntityFrameworkCore/FunShow.LoggingService.EntityFrameworkCore.abppkg.json",
+      "folder": "src"
+    },
+    "FunShow.LoggingService.HttpApi": {
+      "path": "src/FunShow.LoggingService.HttpApi/FunShow.LoggingService.HttpApi.abppkg.json",
+      "folder": "src"
+    },
+    "FunShow.LoggingService.HttpApi.Client": {
+      "path": "src/FunShow.LoggingService.HttpApi.Client/FunShow.LoggingService.HttpApi.Client.abppkg.json",
+      "folder": "src"
+    },
+    "FunShow.LoggingService.HttpApi.Host": {
+      "path": "src/FunShow.LoggingService.HttpApi.Host/FunShow.LoggingService.HttpApi.Host.abppkg.json",
+      "folder": "src"
+    },
+    "FunShow.LoggingService.Domain.Tests": {
+      "path": "test/FunShow.LoggingService.Domain.Tests/FunShow.LoggingService.Domain.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FunShow.LoggingService.EntityFrameworkCore.Tests": {
+      "path": "test/FunShow.LoggingService.EntityFrameworkCore.Tests/FunShow.LoggingService.EntityFrameworkCore.Tests.abppkg.json",
+      "folder": "test"
+    },
+    "FunShow.LoggingService.TestBase": {
+      "path": "test/FunShow.LoggingService.TestBase/FunShow.LoggingService.TestBase.abppkg.json",
+      "folder": "test"
+    },
+    "FunShow.LoggingService.Application.Tests": {
+      "path": "test/FunShow.LoggingService.Application.Tests/FunShow.LoggingService.Application.Tests.abppkg.json",
+      "folder": "test"
+    }
+  }
+}

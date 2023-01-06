@@ -5,10 +5,15 @@ using Volo.Abp.Localization.ExceptionHandling;
 using Volo.Abp.Validation;
 using Volo.Abp.Validation.Localization;
 using Volo.Abp.VirtualFileSystem;
+using Volo.Abp.PermissionManagement;
+using Volo.Abp.FeatureManagement;
+using Volo.Abp.SettingManagement;
 
 namespace FunShow.AdministrationService;
-
 [DependsOn(
+    typeof(AbpPermissionManagementDomainSharedModule),
+    typeof(AbpFeatureManagementDomainSharedModule),
+    typeof(AbpSettingManagementDomainSharedModule),
     typeof(AbpValidationModule)
 )]
 public class AdministrationServiceDomainSharedModule : AbpModule

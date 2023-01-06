@@ -22,6 +22,11 @@ namespace FunShow.AdministrationService.EntityFrameworkCore;
 )]
 public class AdministrationServiceEntityFrameworkCoreModule : AbpModule
 {
+    public override void PreConfigureServices(ServiceConfigurationContext context)
+    {
+        AdministrationServiceEfCoreEntityExtensionMappings.Configure();
+    }
+
     public override void ConfigureServices(ServiceConfigurationContext context)
     {
         context.Services.AddAbpDbContext<AdministrationServiceDbContext>(options =>
