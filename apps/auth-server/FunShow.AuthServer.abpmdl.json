@@ -1,0 +1,13 @@
+{
+  "folders": {
+    "items": {
+      "src": {}
+    }
+  },
+  "packages": {
+    "FunShow.AuthServer": {
+      "path": "src/FunShow.AuthServer/FunShow.AuthServer.abppkg.json",
+      "folder": "src"
+    }
+  }
+}
