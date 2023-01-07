@@ -23,7 +23,7 @@ public class LoggingServiceDatabaseMigrationEventHandler
         ICurrentTenant currentTenant,
         IUnitOfWorkManager unitOfWorkManager,
         ITenantStore tenantStore,
-        IRepository<Tenant> tenantRepository,
+        ITenantRepository tenantRepository,
         IDistributedEventBus distributedEventBus
     ) : base(
         loggerFactory,

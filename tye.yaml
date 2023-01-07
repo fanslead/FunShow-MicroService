@@ -1,0 +1,42 @@
+name: FunShow
+services:
+- name: auth-server
+  project: apps/auth-server/src/FunShow.AuthServer/FunShow.AuthServer.csproj
+  bindings:
+    - protocol: https
+      port: 44322
+  env:
+    - Kestrel__Certificates__Default__Path=../../../../etc/dev-cert/localhost.pfx
+    - Kestrel__Certificates__Default__Password=e8202f07-66e5-4619-be07-72ba76fde97f
+- name: administration-service
+  project: services/administration/src/FunShow.AdministrationService.HttpApi.Host/FunShow.AdministrationService.HttpApi.Host.csproj
+  bindings:
+    - protocol: https
+      port: 44794
+  env:
+    - Kestrel__Certificates__Default__Path=../../../../etc/dev-cert/localhost.pfx
+    - Kestrel__Certificates__Default__Password=e8202f07-66e5-4619-be07-72ba76fde97f
+- name: identity-service
+  project: services/identity/src/FunShow.IdentityService.HttpApi.Host/FunShow.IdentityService.HttpApi.Host.csproj
+  bindings:
+    - protocol: https
+      port: 44437
+  env:
+    - Kestrel__Certificates__Default__Path=../../../../etc/dev-cert/localhost.pfx
+    - Kestrel__Certificates__Default__Password=e8202f07-66e5-4619-be07-72ba76fde97f
+- name: logging-service
+  project: services/logging/src/FunShow.LoggingService.HttpApi.Host/FunShow.LoggingService.HttpApi.Host.csproj
+  bindings:
+    - protocol: https
+      port: 45124
+  env:
+    - Kestrel__Certificates__Default__Path=../../../../etc/dev-cert/localhost.pfx
+    - Kestrel__Certificates__Default__Password=e8202f07-66e5-4619-be07-72ba76fde97f
+- name: web-gateway
+  project: gateways/web/src/FunShow.WebGateway/FunShow.WebGateway.csproj
+  bindings:
+    - protocol: https
+      port: 44325
+  env:
+    - Kestrel__Certificates__Default__Path=../../../../etc/dev-cert/localhost.pfx
+    - Kestrel__Certificates__Default__Password=e8202f07-66e5-4619-be07-72ba76fde97f  

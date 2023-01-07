@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0D4743C0-6E2
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{2C356C85-34E5-4796-8237-D8B8F87A76BD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunShow.AuthServer", "src\FunShow.AuthServer\FunShow.AuthServer.csproj", "{9552CDB6-826B-4781-9973-10393023F332}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunShow.AuthServer", "src\FunShow.AuthServer\FunShow.AuthServer.csproj", "{F91AA4D8-0865-41D1-80E5-BB60CA9AD965}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,16 +15,16 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{9552CDB6-826B-4781-9973-10393023F332}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9552CDB6-826B-4781-9973-10393023F332}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9552CDB6-826B-4781-9973-10393023F332}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9552CDB6-826B-4781-9973-10393023F332}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F91AA4D8-0865-41D1-80E5-BB60CA9AD965}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F91AA4D8-0865-41D1-80E5-BB60CA9AD965}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F91AA4D8-0865-41D1-80E5-BB60CA9AD965}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F91AA4D8-0865-41D1-80E5-BB60CA9AD965}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{9552CDB6-826B-4781-9973-10393023F332} = {0D4743C0-6E23-4FCA-95BC-C31FD4257CA6}
+		{F91AA4D8-0865-41D1-80E5-BB60CA9AD965} = {0D4743C0-6E23-4FCA-95BC-C31FD4257CA6}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {49D4C6C5-5F0B-4E27-9021-92F56CCF56A3}
