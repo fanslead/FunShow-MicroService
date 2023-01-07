@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Volo.Abp.Http.Client;
+using Volo.Abp.Identity;
 using Volo.Abp.Modularity;
 using Volo.Abp.VirtualFileSystem;
 
@@ -7,6 +8,7 @@ namespace FunShow.IdentityService;
 
 [DependsOn(
     typeof(IdentityServiceApplicationContractsModule),
+    typeof(AbpIdentityHttpApiClientModule),
     typeof(AbpHttpClientModule))]
 public class IdentityServiceHttpApiClientModule : AbpModule
 {

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
+using FunShow.Shared.Hosting.AspNetCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -12,24 +13,16 @@ public class Program
 {
     public async static Task<int> Main(string[] args)
     {
-        Log.Logger = new LoggerConfiguration()
-#if DEBUG
-            .MinimumLevel.Debug()
-#else
-            .MinimumLevel.Information()
-#endif
-            .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
-            .MinimumLevel.Override("Microsoft.EntityFrameworkCore", LogEventLevel.Warning)
-            .Enrich.FromLogContext()
-            .WriteTo.Async(c => c.File("Logs/logs.txt"))
-            .WriteTo.Async(c => c.Console())
-            .CreateLogger();
+        var assemblyName = typeof(Program).Assembly.GetName().Name;
+
+        SerilogConfigurationHelper.Configure(assemblyName);
 
         try
         {
-            Log.Information("Starting web host.");
+            Log.Information($"Starting {assemblyName}.");
             var builder = WebApplication.CreateBuilder(args);
-            builder.Host.AddAppSettingsSecretsJson()
+            builder.Host
+                .AddAppSettingsSecretsJson()
                 .UseAutofac()
                 .UseSerilog();
             await builder.AddApplicationAsync<IdentityServiceHttpApiHostModule>();
@@ -40,7 +33,7 @@ public class Program
         }
         catch (Exception ex)
         {
-            Log.Fatal(ex, "Host terminated unexpectedly!");
+            Log.Fatal(ex, $"{assemblyName} terminated unexpectedly!");
             return 1;
         }
         finally

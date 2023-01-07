@@ -2,12 +2,14 @@
 using Volo.Abp.AutoMapper;
 using Volo.Abp.Modularity;
 using Volo.Abp.Application;
+using Volo.Abp.Identity;
 
 namespace FunShow.IdentityService;
 
 [DependsOn(
     typeof(IdentityServiceDomainModule),
     typeof(IdentityServiceApplicationContractsModule),
+    typeof(AbpIdentityApplicationModule),
     typeof(AbpDddApplicationModule),
     typeof(AbpAutoMapperModule)
     )]

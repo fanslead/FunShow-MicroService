@@ -3,12 +3,14 @@ using FunShow.IdentityService.Localization;
 using Volo.Abp.AspNetCore.Mvc;
 using Volo.Abp.Localization;
 using Volo.Abp.Modularity;
+using Volo.Abp.Identity;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace FunShow.IdentityService;
 
 [DependsOn(
     typeof(IdentityServiceApplicationContractsModule),
+    typeof(AbpIdentityHttpApiModule),
     typeof(AbpAspNetCoreMvcModule))]
 public class IdentityServiceHttpApiModule : AbpModule
 {
