@@ -31,6 +31,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunShow.IdentityService.Htt
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunShow.LoggingService.HttpApi.Host", "services\logging\src\FunShow.LoggingService.HttpApi.Host\FunShow.LoggingService.HttpApi.Host.csproj", "{F6AE6AF3-C62B-49A9-9F70-88C21E7C3AAE}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunShow.AuthServer", "apps\auth-server\src\Walk.AuthServer\FunShow.AuthServer.csproj", "{944CA841-1DC3-4681-B3E9-47B4642664DB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunShow.WebGateway", "gateways\web\src\FunShow.WebGateway\FunShow.WebGateway.csproj", "{33088639-50F4-4C5C-AF7E-90E8097A02A2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +81,14 @@ Global
 		{F6AE6AF3-C62B-49A9-9F70-88C21E7C3AAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F6AE6AF3-C62B-49A9-9F70-88C21E7C3AAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F6AE6AF3-C62B-49A9-9F70-88C21E7C3AAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{944CA841-1DC3-4681-B3E9-47B4642664DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{944CA841-1DC3-4681-B3E9-47B4642664DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{944CA841-1DC3-4681-B3E9-47B4642664DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{944CA841-1DC3-4681-B3E9-47B4642664DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33088639-50F4-4C5C-AF7E-90E8097A02A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33088639-50F4-4C5C-AF7E-90E8097A02A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33088639-50F4-4C5C-AF7E-90E8097A02A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33088639-50F4-4C5C-AF7E-90E8097A02A2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -92,6 +104,8 @@ Global
 		{D94C52E2-AF63-4E20-B619-F838FF286209} = {13B28484-9A23-4F5F-B9D0-51F2262635AB}
 		{256A18FA-CECA-4299-9A0C-1EC004A64A8A} = {13B28484-9A23-4F5F-B9D0-51F2262635AB}
 		{F6AE6AF3-C62B-49A9-9F70-88C21E7C3AAE} = {13B28484-9A23-4F5F-B9D0-51F2262635AB}
+		{944CA841-1DC3-4681-B3E9-47B4642664DB} = {33EAC800-4132-4A61-91F7-DEA27746AFB9}
+		{33088639-50F4-4C5C-AF7E-90E8097A02A2} = {D1BA1CDF-5F6C-4387-AF5C-082BCB6AB1D5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E0BCD960-EEED-4C74-BF76-C42D98D7EE36}
