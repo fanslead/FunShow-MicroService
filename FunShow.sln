@@ -29,6 +29,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunShow.AdministrationServi
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunShow.IdentityService.HttpApi.Host", "services\identity\src\FunShow.IdentityService.HttpApi.Host\FunShow.IdentityService.HttpApi.Host.csproj", "{256A18FA-CECA-4299-9A0C-1EC004A64A8A}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunShow.LoggingService.HttpApi.Host", "services\logging\src\FunShow.LoggingService.HttpApi.Host\FunShow.LoggingService.HttpApi.Host.csproj", "{F6AE6AF3-C62B-49A9-9F70-88C21E7C3AAE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{256A18FA-CECA-4299-9A0C-1EC004A64A8A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{256A18FA-CECA-4299-9A0C-1EC004A64A8A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{256A18FA-CECA-4299-9A0C-1EC004A64A8A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F6AE6AF3-C62B-49A9-9F70-88C21E7C3AAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F6AE6AF3-C62B-49A9-9F70-88C21E7C3AAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F6AE6AF3-C62B-49A9-9F70-88C21E7C3AAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F6AE6AF3-C62B-49A9-9F70-88C21E7C3AAE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -85,6 +91,7 @@ Global
 		{882D7533-CE64-4480-91FB-8731CF40837C} = {5B682930-E970-4448-9FBD-2E9A39379AB6}
 		{D94C52E2-AF63-4E20-B619-F838FF286209} = {13B28484-9A23-4F5F-B9D0-51F2262635AB}
 		{256A18FA-CECA-4299-9A0C-1EC004A64A8A} = {13B28484-9A23-4F5F-B9D0-51F2262635AB}
+		{F6AE6AF3-C62B-49A9-9F70-88C21E7C3AAE} = {13B28484-9A23-4F5F-B9D0-51F2262635AB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E0BCD960-EEED-4C74-BF76-C42D98D7EE36}
