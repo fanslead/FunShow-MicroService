@@ -1,0 +1,13 @@
+{
+  "folders": {
+    "items": {
+      "src": {}
+    }
+  },
+  "packages": {
+    "FunShow.WebGateway": {
+      "path": "src/FunShow.WebGateway/FunShow.WebGateway.abppkg.json",
+      "folder": "src"
+    }
+  }
+}

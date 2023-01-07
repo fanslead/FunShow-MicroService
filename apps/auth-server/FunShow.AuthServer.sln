@@ -7,7 +7,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0D4743C0-6E2
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{2C356C85-34E5-4796-8237-D8B8F87A76BD}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunShow.AuthServer", "src\Walk.AuthServer\FunShow.AuthServer.csproj", "{9552CDB6-826B-4781-9973-10393023F332}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FunShow.AuthServer", "src\FunShow.AuthServer\FunShow.AuthServer.csproj", "{9552CDB6-826B-4781-9973-10393023F332}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

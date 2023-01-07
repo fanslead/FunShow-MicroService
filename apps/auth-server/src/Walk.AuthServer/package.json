@@ -1,6 +1,6 @@
 {
   "version": "0.1.0",
-  "name": "WalkAuthServer",
+  "name": "FunShowAuthServer",
   "private": true,
   "dependencies": {
     "@volo/abp.aspnetcore.mvc.ui.theme.leptonx": "~1.0.0",
