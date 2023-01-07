@@ -1,6 +1,7 @@
 ﻿using FunShow.AdministrationService.EntityFrameworkCore;
 using FunShow.IdentityService;
 using FunShow.IdentityService.EntityFrameworkCore;
+using FunShow.LoggingService.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;

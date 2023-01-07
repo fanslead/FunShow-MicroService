@@ -22,8 +22,8 @@ namespace FunShow.AdministrationService.DbMigrations
             ILoggerFactory loggerFactory,
             ICurrentTenant currentTenant,
             IUnitOfWorkManager unitOfWorkManager,
-            ITenantStore tenantStore, 
-            IRepository<Tenant> tenantRepository,
+            ITenantStore tenantStore,
+            ITenantRepository tenantRepository,
             IDistributedEventBus distributedEventBus
         ) : base(
             loggerFactory,
