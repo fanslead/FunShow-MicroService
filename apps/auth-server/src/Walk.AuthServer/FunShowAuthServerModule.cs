@@ -153,11 +153,6 @@ public class FunShowAuthServerModule : AbpModule
                     $"..{Path.DirectorySeparatorChar}..{Path.DirectorySeparatorChar}..{Path.DirectorySeparatorChar}..{Path.DirectorySeparatorChar}shared{Path.DirectorySeparatorChar}FunShow.Shared.Localization"));
             });
         }
-        
-        // Configure<LeptonXLiteThemeOptions>(options =>
-        // {
-        //     options.DefaultStyle = LeptonXStyleNames.System;
-        // });
     }
 
     public override void OnApplicationInitialization(ApplicationInitializationContext context)
