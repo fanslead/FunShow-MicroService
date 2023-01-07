@@ -88,7 +88,6 @@ public class OpenIddictDataSeeder : ITransientDependency
         if (!swaggerClientId.IsNullOrWhiteSpace())
         {
             var webGatewaySwaggerRootUrl = _configuration[$"OpenIddict:Applications:{name}:RootUrl"].TrimEnd('/');
-            var publicWebGatewayRootUrl = _configuration[$"OpenIddict:Applications:PublicWebGateway:RootUrl"].TrimEnd('/');
             var accountServiceRootUrl = _configuration[$"OpenIddict:Resources:AccountService:RootUrl"].TrimEnd('/');
             var identityServiceRootUrl = _configuration[$"OpenIddict:Resources:IdentityService:RootUrl"].TrimEnd('/');
             var administrationServiceRootUrl = _configuration[$"OpenIddict:Resources:AdministrationService:RootUrl"].TrimEnd('/');

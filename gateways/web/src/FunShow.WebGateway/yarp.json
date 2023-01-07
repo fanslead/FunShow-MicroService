@@ -19,6 +19,12 @@
           "Path": "/api/abp/{**everything}"
         }
       },
+      "Logging Service": {
+        "ClusterId": "loggingCluster",
+        "Match": {
+          "Path": "/api/LoggingService/{**everything}"
+        }
+      },
       "feature-management-route": {
         "ClusterId": "feature-management-cluster",
         "Match": {
@@ -49,7 +55,7 @@
       "identityCluster": {
         "Destinations": {
           "destination1": {
-            "Address": "https://localhost:44338"
+            "Address": "https://localhost:44388"
           }
         }
       },
@@ -57,6 +63,13 @@
         "Destinations": {
           "destination1": {
             "Address": "https://localhost:44367"
+          }
+        }
+      },
+      "loggingCluster": {
+        "Destinations": {
+          "destination1": {
+            "Address": "https://localhost:45124"
           }
         }
       },

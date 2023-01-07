@@ -12,7 +12,7 @@ services:
   project: services/administration/src/FunShow.AdministrationService.HttpApi.Host/FunShow.AdministrationService.HttpApi.Host.csproj
   bindings:
     - protocol: https
-      port: 44794
+      port: 44367
   env:
     - Kestrel__Certificates__Default__Path=../../../../etc/dev-cert/localhost.pfx
     - Kestrel__Certificates__Default__Password=e8202f07-66e5-4619-be07-72ba76fde97f
@@ -20,7 +20,7 @@ services:
   project: services/identity/src/FunShow.IdentityService.HttpApi.Host/FunShow.IdentityService.HttpApi.Host.csproj
   bindings:
     - protocol: https
-      port: 44437
+      port: 44388
   env:
     - Kestrel__Certificates__Default__Path=../../../../etc/dev-cert/localhost.pfx
     - Kestrel__Certificates__Default__Password=e8202f07-66e5-4619-be07-72ba76fde97f
