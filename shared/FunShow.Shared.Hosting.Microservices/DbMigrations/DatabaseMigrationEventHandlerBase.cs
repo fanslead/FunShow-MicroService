@@ -27,7 +27,7 @@ namespace FunShow.Shared.Hosting.Microservices.DbMigrations
         protected ICurrentTenant CurrentTenant { get; }
         protected IUnitOfWorkManager UnitOfWorkManager { get; }
         protected ITenantStore TenantStore { get; }
-        protected IRepository<Tenant> TenantRepository { get; }
+        protected ITenantRepository TenantRepository { get; }
         protected IDistributedEventBus DistributedEventBus { get; }
         protected ILogger<DatabaseMigrationEventHandlerBase<TDbContext>> Logger { get; }
         protected string DatabaseName { get; }
@@ -37,7 +37,7 @@ namespace FunShow.Shared.Hosting.Microservices.DbMigrations
             ICurrentTenant currentTenant,
             IUnitOfWorkManager unitOfWorkManager,
             ITenantStore tenantStore,
-            IRepository<Tenant> tenantRepository,
+            ITenantRepository tenantRepository,
             IDistributedEventBus distributedEventBus,
             string databaseName)
         {

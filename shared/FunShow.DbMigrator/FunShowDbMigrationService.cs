@@ -1,22 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Threading;
-using System.Threading.Tasks;
+﻿using FunShow.AdministrationService.EntityFrameworkCore;
+using FunShow.IdentityService;
+using FunShow.IdentityService.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using FunShow.AdministrationService.EntityFrameworkCore;
-using FunShow.IdentityService;
-using FunShow.IdentityService.EntityFrameworkCore;
-using FunShow.ProductService.EntityFrameworkCore;
-using FunShow.SaasService.EntityFrameworkCore;
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
+using Volo.Abp.Domain.Repositories;
 using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.Identity;
 using Volo.Abp.MultiTenancy;
+using Volo.Abp.TenantManagement;
 using Volo.Abp.Uow;
-using Volo.Saas.Tenants;
 
 namespace FunShow.DbMigrator;
 
@@ -90,15 +85,9 @@ public class FunShowDbMigrationService : ITransientDependency
     {
         using (var uow = _unitOfWorkManager.Begin(requiresNew: true, isTransactional: false))
         {
-            if (tenantId == null)
-            {
-                /* SaaS schema should only be available in the host side */
-                await MigrateDatabaseAsync<SaasServiceDbContext>(cancellationToken);
-            }
-
             await MigrateDatabaseAsync<AdministrationServiceDbContext>(cancellationToken);
             await MigrateDatabaseAsync<IdentityServiceDbContext>(cancellationToken);
-            await MigrateDatabaseAsync<ProductServiceDbContext>(cancellationToken);
+            await MigrateDatabaseAsync<LoggingServiceDbContext>(cancellationToken);
 
             await uow.CompleteAsync(cancellationToken);
         }

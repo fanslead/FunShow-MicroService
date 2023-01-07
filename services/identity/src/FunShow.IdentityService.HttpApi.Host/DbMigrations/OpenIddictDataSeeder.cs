@@ -92,6 +92,7 @@ public class OpenIddictDataSeeder : IDataSeedContributor, ITransientDependency
             var accountServiceRootUrl = _configuration[$"OpenIddict:Resources:AccountService:RootUrl"].TrimEnd('/');
             var identityServiceRootUrl = _configuration[$"OpenIddict:Resources:IdentityService:RootUrl"].TrimEnd('/');
             var administrationServiceRootUrl = _configuration[$"OpenIddict:Resources:AdministrationService:RootUrl"].TrimEnd('/');
+            var loggingServiceRootUrl = _configuration[$"OpenIddict:Resources:LoggingServiceRootUrl:RootUrl"].TrimEnd('/');
 
             await CreateApplicationAsync(
                 name: swaggerClientId,
@@ -109,6 +110,7 @@ public class OpenIddictDataSeeder : IDataSeedContributor, ITransientDependency
                     $"{accountServiceRootUrl}/swagger/oauth2-redirect.html", // AccountService redirect uri
                     $"{identityServiceRootUrl}/swagger/oauth2-redirect.html", // IdentityService redirect uri
                     $"{administrationServiceRootUrl}/swagger/oauth2-redirect.html", // AdministrationService redirect uri
+                    $"{loggingServiceRootUrl}/swagger/oauth2-redirect.html", // LoggingServiceRootUrl redirect uri
                 }
             );
         }

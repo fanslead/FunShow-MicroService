@@ -7,6 +7,8 @@ using Volo.Abp.Data;
 using Volo.Abp.EventBus.Distributed;
 using Volo.Abp.MultiTenancy;
 using Volo.Abp.Uow;
+using Volo.Abp.Domain.Repositories;
+using Volo.Abp.TenantManagement;
 
 namespace FunShow.LoggingService.DbMigrations;
 
@@ -21,12 +23,14 @@ public class LoggingServiceDatabaseMigrationEventHandler
         ICurrentTenant currentTenant,
         IUnitOfWorkManager unitOfWorkManager,
         ITenantStore tenantStore,
+        IRepository<Tenant> tenantRepository,
         IDistributedEventBus distributedEventBus
     ) : base(
         loggerFactory,
         currentTenant,
         unitOfWorkManager,
-        tenantStore,
+        tenantStore, 
+        tenantRepository,
         distributedEventBus,
         LoggingServiceDbProperties.ConnectionStringName)
     {

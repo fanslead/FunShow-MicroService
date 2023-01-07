@@ -2,10 +2,8 @@
 using FunShow.AdministrationService.EntityFrameworkCore;
 using FunShow.IdentityService;
 using FunShow.IdentityService.EntityFrameworkCore;
-using FunShow.ProductService;
-using FunShow.ProductService.EntityFrameworkCore;
-using FunShow.SaasService;
-using FunShow.SaasService.EntityFrameworkCore;
+using FunShow.LoggingService;
+using FunShow.LoggingService.EntityFrameworkCore;
 using FunShow.Shared.Hosting;
 using Volo.Abp.Modularity;
 
@@ -15,12 +13,10 @@ namespace FunShow.DbMigrator;
     typeof(FunShowSharedHostingModule),
     typeof(IdentityServiceEntityFrameworkCoreModule),
     typeof(IdentityServiceApplicationContractsModule),
-    typeof(SaasServiceEntityFrameworkCoreModule),
-    typeof(SaasServiceApplicationContractsModule),
+    typeof(LoggingServiceEntityFrameworkCoreModule),
+    typeof(LoggingServiceApplicationContractsModule),
     typeof(AdministrationServiceEntityFrameworkCoreModule),
-    typeof(AdministrationServiceApplicationContractsModule),
-    typeof(ProductServiceApplicationContractsModule),
-    typeof(ProductServiceEntityFrameworkCoreModule)
+    typeof(AdministrationServiceApplicationContractsModule)
 )]
 public class FunShowDbMigratorModule : AbpModule
 {
