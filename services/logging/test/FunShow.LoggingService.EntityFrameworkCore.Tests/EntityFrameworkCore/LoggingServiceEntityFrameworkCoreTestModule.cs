@@ -6,7 +6,7 @@ using Volo.Abp.EntityFrameworkCore;
 using Volo.Abp.EntityFrameworkCore.Sqlite;
 using Volo.Abp.Modularity;
 
-namespace Walk.LoggingService.EntityFrameworkCore;
+namespace FunShow.LoggingService.EntityFrameworkCore;
 
 [DependsOn(
     typeof(LoggingServiceTestBaseModule),

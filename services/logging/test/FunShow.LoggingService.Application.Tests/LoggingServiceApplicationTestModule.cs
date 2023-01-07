@@ -1,6 +1,6 @@
 ﻿using Volo.Abp.Modularity;
 
-namespace Walk.LoggingService;
+namespace FunShow.LoggingService;
 
 [DependsOn(
     typeof(LoggingServiceApplicationModule),

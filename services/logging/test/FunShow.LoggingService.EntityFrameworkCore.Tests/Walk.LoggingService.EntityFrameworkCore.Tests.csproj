@@ -2,18 +2,18 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <RootNamespace>Walk.LoggingService</RootNamespace>
+    <RootNamespace>FunShow.LoggingService</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.2.0" />
     <PackageReference Include="Microsoft.Data.Sqlite" Version="6.0.0" />
     <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="6.0.1" />
-    <ProjectReference Include="..\Walk.LoggingService.TestBase\Walk.LoggingService.TestBase.csproj" />
+    <ProjectReference Include="..\FunShow.LoggingService.TestBase\FunShow.LoggingService.TestBase.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Walk.LoggingService.EntityFrameworkCore\Walk.LoggingService.EntityFrameworkCore.csproj" />
+    <ProjectReference Include="..\..\src\FunShow.LoggingService.EntityFrameworkCore\FunShow.LoggingService.EntityFrameworkCore.csproj" />
   </ItemGroup>
 
 </Project>

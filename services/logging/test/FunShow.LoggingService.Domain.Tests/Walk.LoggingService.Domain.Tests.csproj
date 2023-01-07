@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <RootNamespace>Walk.LoggingService</RootNamespace>
+    <RootNamespace>FunShow.LoggingService</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Walk.LoggingService.EntityFrameworkCore.Tests\Walk.LoggingService.EntityFrameworkCore.Tests.csproj" />
+    <ProjectReference Include="..\FunShow.LoggingService.EntityFrameworkCore.Tests\FunShow.LoggingService.EntityFrameworkCore.Tests.csproj" />
   </ItemGroup>
 
 </Project>

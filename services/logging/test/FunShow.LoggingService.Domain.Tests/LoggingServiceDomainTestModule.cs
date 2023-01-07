@@ -1,7 +1,7 @@
-﻿using Walk.LoggingService.EntityFrameworkCore;
+﻿using FunShow.LoggingService.EntityFrameworkCore;
 using Volo.Abp.Modularity;
 
-namespace Walk.LoggingService;
+namespace FunShow.LoggingService;
 
 /* Domain tests are configured to use the EF Core provider.
  * You can switch to MongoDB, however your domain tests should be

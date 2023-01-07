@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <RootNamespace>Walk.LoggingService</RootNamespace>
+    <RootNamespace>FunShow.LoggingService</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
@@ -32,7 +32,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Walk.LoggingService.Domain\Walk.LoggingService.Domain.csproj" />
+    <ProjectReference Include="..\..\src\FunShow.LoggingService.Domain\FunShow.LoggingService.Domain.csproj" />
   </ItemGroup>
 
 </Project>

@@ -6,7 +6,7 @@ using Volo.Abp.Data;
 using Volo.Abp.Modularity;
 using Volo.Abp.Threading;
 
-namespace Walk.LoggingService;
+namespace FunShow.LoggingService;
 
 [DependsOn(
     typeof(AbpAutofacModule),

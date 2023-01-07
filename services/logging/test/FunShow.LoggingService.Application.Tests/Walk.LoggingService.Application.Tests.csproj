@@ -2,12 +2,12 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <RootNamespace>Walk.LoggingService</RootNamespace>
+    <RootNamespace>FunShow.LoggingService</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\Walk.LoggingService.Application\Walk.LoggingService.Application.csproj" />
-    <ProjectReference Include="..\Walk.LoggingService.Domain.Tests\Walk.LoggingService.Domain.Tests.csproj" />
+    <ProjectReference Include="..\..\src\FunShow.LoggingService.Application\FunShow.LoggingService.Application.csproj" />
+    <ProjectReference Include="..\FunShow.LoggingService.Domain.Tests\FunShow.LoggingService.Domain.Tests.csproj" />
   </ItemGroup>
 
   <ItemGroup>

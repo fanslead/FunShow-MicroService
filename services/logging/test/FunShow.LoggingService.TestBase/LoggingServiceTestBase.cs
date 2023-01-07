@@ -7,7 +7,7 @@ using Volo.Abp.Modularity;
 using Volo.Abp.Testing;
 using Volo.Abp.Uow;
 
-namespace Walk.LoggingService;
+namespace FunShow.LoggingService;
 
 /* All test classes are derived from this class, directly or indirectly. */
 public abstract class LoggingServiceTestBase<TStartupModule> : AbpIntegratedTest<TStartupModule>

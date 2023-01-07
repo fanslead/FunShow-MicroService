@@ -2,7 +2,7 @@
 using Volo.Abp.Data;
 using Volo.Abp.DependencyInjection;
 
-namespace Walk.LoggingService;
+namespace FunShow.LoggingService;
 
 public class LoggingServiceDataSeedContributor : IDataSeedContributor, ITransientDependency
 {

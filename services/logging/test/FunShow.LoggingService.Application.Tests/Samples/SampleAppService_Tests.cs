@@ -1,4 +1,4 @@
-﻿namespace Walk.LoggingService.Samples;
+﻿namespace FunShow.LoggingService.Samples;
 
 public class SampleAppService_Tests : LoggingServiceApplicationTestBase
 {
