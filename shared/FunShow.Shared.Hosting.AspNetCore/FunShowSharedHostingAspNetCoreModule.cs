@@ -1,5 +1,7 @@
 ﻿using System;
+using FunShow.Shared.Hosting.AspNetCore.JsonConverters;
 using Volo.Abp.AspNetCore.Serilog;
+using Volo.Abp.Json.SystemTextJson;
 using Volo.Abp.Modularity;
 using Volo.Abp.Swashbuckle;
 
@@ -13,4 +15,8 @@ namespace FunShow.Shared.Hosting.AspNetCore;
 public class FunShowSharedHostingAspNetCoreModule : AbpModule
 {
 
+    public override void ConfigureServices(ServiceConfigurationContext context)
+    {
+        Configure<AbpSystemTextJsonSerializerOptions>(options => options.JsonSerializerOptions.Converters.Add(new ExceptionJsonConverter<Exception>()));
+    }
 }
