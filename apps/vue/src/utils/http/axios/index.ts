@@ -169,7 +169,6 @@ const transform: AxiosTransform = {
     const msg: string = response?.data?.error?.message ?? ''
     const err: string = error?.toString?.() ?? ''
     let errMessage = ''
-
     try {
       if (code === 'ECONNABORTED' && message.indexOf('timeout') !== -1) {
         errMessage = t('sys.api.apiTimeoutMessage')
@@ -189,8 +188,7 @@ const transform: AxiosTransform = {
     } catch (error) {
       throw new Error(error as unknown as string)
     }
-
-    checkStatus(error?.response?.status, msg, errorMessageMode)
+    checkStatus(error?.response, msg, errorMessageMode)
 
     // 添加自动重试机制 保险起见 只针对GET请求
     const retryRequest = new AxiosRetry()
@@ -211,7 +209,7 @@ function createAxios(opt?: Partial<CreateAxiosOptions>) {
         // See https://developer.mozilla.org/en-US/docs/Web/HTTP/Authentication#authentication_schemes
         // authentication schemes，e.g: Bearer
         // authenticationScheme: 'Bearer',
-        authenticationScheme: '',
+        authenticationScheme: 'Bearer',
         timeout: 10 * 1000,
         // 基础接口地址
         // baseURL: globSetting.apiUrl,
@@ -257,6 +255,14 @@ function createAxios(opt?: Partial<CreateAxiosOptions>) {
   )
 }
 export const defHttp = createAxios()
+
+export const authHttp = createAxios({
+  headers: { 'Content-Type': ContentTypeEnum.FORM_URLENCODED },
+  requestOptions: {
+    apiUrl: globSetting.authUrl,
+    errorMessageMode: 'message',
+  },
+})
 
 // other api url
 // export const otherHttp = createAxios({

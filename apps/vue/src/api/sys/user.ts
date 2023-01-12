@@ -1,12 +1,17 @@
-import { defHttp } from '/@/utils/http/axios'
-import { LoginParams, LoginResultModel, GetUserInfoModel } from './model/userModel'
+import { defHttp, authHttp } from '/@/utils/http/axios'
+import { LoginParams, LoginResultModel } from './model/userModel'
+import { useGlobSetting } from '/@/hooks/setting'
 
 import { ErrorMessageMode } from '/#/axios'
+import { createLocalStorage } from '/@/utils/cache'
+import { getToken } from '/@/utils/auth'
+
+const globSetting = useGlobSetting()
 
 enum Api {
-  Login = '/login',
-  Logout = '/logout',
-  GetUserInfo = '/getUserInfo',
+  Login = '/connect/token',
+  Logout = '/connect/revocat',
+  GetUserInfo = '/api/account/my-profile',
   GetPermCode = '/getPermCode',
   TestRetry = '/testRetry',
 }
@@ -15,13 +20,20 @@ enum Api {
  * @description: user login api
  */
 export function loginApi(params: LoginParams, mode: ErrorMessageMode = 'modal') {
-  return defHttp.post<LoginResultModel>(
+  const loginParams = {
+    client_id: globSetting.clientId,
+    grant_type: globSetting.grantType,
+    scope: globSetting.scope,
+    ...params,
+  }
+  return authHttp.post<LoginResultModel>(
     {
       url: Api.Login,
-      params,
+      params: loginParams,
     },
     {
       errorMessageMode: mode,
+      isTransformResponse: false,
     },
   )
 }
@@ -30,15 +42,33 @@ export function loginApi(params: LoginParams, mode: ErrorMessageMode = 'modal') 
  * @description: getUserInfo
  */
 export function getUserInfo() {
-  return defHttp.get<GetUserInfoModel>({ url: Api.GetUserInfo }, { errorMessageMode: 'none' })
+  const configuration = createLocalStorage().get('application_configuration')
+  const userInfo = configuration.currentUser
+  return userInfo
+  //return defHttp.get<GetUserInfoModel>({ url: Api.GetUserInfo }, { errorMessageMode: 'none' })
 }
 
 export function getPermCode() {
-  return defHttp.get<string[]>({ url: Api.GetPermCode })
+  const configuration = createLocalStorage().get('application_configuration')
+  const permissions: string[] = []
+  for (const key in configuration.grantedPolicies) {
+    if (configuration.grantedPolicies[key]) {
+      permissions.push(key)
+    }
+  }
+  return permissions
+  //return defHttp.get<string[]>({ url: Api.GetPermCode })
 }
 
 export function doLogout() {
-  return defHttp.get({ url: Api.Logout })
+  return authHttp.post({
+    url: Api.Logout,
+    params: {
+      client_id: globSetting.clientId,
+      token: getToken(),
+      token_type_hint: 'access_token',
+    },
+  })
 }
 
 export function testRetry() {

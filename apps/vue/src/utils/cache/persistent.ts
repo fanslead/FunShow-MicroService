@@ -6,6 +6,7 @@ import { createLocalStorage, createSessionStorage } from '/@/utils/cache'
 import { Memory } from './memory'
 import {
   TOKEN_KEY,
+  REFRESH_TOKEN_KEY,
   USER_INFO_KEY,
   ROLES_KEY,
   PROJ_CFG_KEY,
@@ -19,6 +20,7 @@ import { pick, omit } from 'lodash-es'
 
 interface BasicStore {
   [TOKEN_KEY]: string | number | null | undefined
+  [REFRESH_TOKEN_KEY]: string | number | null | undefined
   [USER_INFO_KEY]: UserInfo
   [ROLES_KEY]: string[]
   [PROJ_CFG_KEY]: ProjectConfig

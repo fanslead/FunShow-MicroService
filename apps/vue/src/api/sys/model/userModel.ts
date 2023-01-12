@@ -15,18 +15,19 @@ export interface RoleInfo {
  * @description: Login interface return value
  */
 export interface LoginResultModel {
-  userId: string | number
-  token: string
-  role: RoleInfo
+  expires_in: number
+  access_token: string
+  refresh_token: string
+  token_type: string
 }
 
 /**
  * @description: Get user information return value
  */
 export interface GetUserInfoModel {
-  roles: RoleInfo[]
+  roles: string[]
   // 用户id
-  userId: string | number
+  id: string | number
   // 用户名
   username: string
   // 真实名字
@@ -35,4 +36,7 @@ export interface GetUserInfoModel {
   avatar: string
   // 介绍
   desc?: string
+  name?: string
+  phoneNumber: string
+  email: string
 }

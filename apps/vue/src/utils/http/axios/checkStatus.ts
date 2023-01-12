@@ -12,15 +12,14 @@ const error = createMessage.error!
 const stp = projectSetting.sessionTimeoutProcessing
 
 export function checkStatus(
-  status: number,
+  response: any,
   msg: string,
   errorMessageMode: ErrorMessageMode = 'message',
 ): void {
   const { t } = useI18n()
   const userStore = useUserStoreWithOut()
   let errMessage = ''
-
-  switch (status) {
+  switch (response?.status) {
     case 400:
       errMessage = `${msg}`
       break
@@ -69,12 +68,17 @@ export function checkStatus(
       break
     default:
   }
-
+  if (response?.data?.error_description) {
+    errMessage = response?.data?.error_description
+  }
+  if (response?.data?.error?.message) {
+    errMessage = response?.data?.error?.message
+  }
   if (errMessage) {
     if (errorMessageMode === 'modal') {
       createErrorModal({ title: t('sys.api.errorTip'), content: errMessage })
     } else if (errorMessageMode === 'message') {
-      error({ content: errMessage, key: `global_error_message_status_${status}` })
+      error({ content: errMessage, key: `global_error_message_status_${response?.status}` })
     }
   }
 }

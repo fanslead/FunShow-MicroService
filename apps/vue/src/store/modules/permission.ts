@@ -103,8 +103,8 @@ export const usePermissionStore = defineStore({
       this.backMenuList = []
       this.lastBuildMenuTime = 0
     },
-    async changePermissionCode() {
-      const codeList = await getPermCode()
+    changePermissionCode() {
+      const codeList = getPermCode()
       this.setPermCodeList(codeList)
     },
 
@@ -221,7 +221,7 @@ export const usePermissionStore = defineStore({
           // 这个功能可能只需要执行一次，实际项目可以自己放在合适的时间
           let routeList: AppRouteRecordRaw[] = []
           try {
-            await this.changePermissionCode()
+            this.changePermissionCode()
             routeList = (await getMenuList()) as AppRouteRecordRaw[]
           } catch (error) {
             console.error(error)
