@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <Import Project="..\..\..\..\common.props" />
 
@@ -12,7 +12,7 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" Version="7.0.0" />
     <ProjectReference Include="..\..\src\FunShow.AdministrationService.EntityFrameworkCore\FunShow.AdministrationService.EntityFrameworkCore.csproj" />
     <ProjectReference Include="..\FunShow.AdministrationService.TestBase\FunShow.AdministrationService.TestBase.csproj" />
-    <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="7.0.0" />
+    <PackageReference Include="Volo.Abp.EntityFrameworkCore.Sqlite" Version="7.0.1" />
   </ItemGroup>
 
 </Project>

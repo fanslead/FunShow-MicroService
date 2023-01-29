@@ -4,6 +4,6 @@
   "private": true,
   "dependencies": {
     "@volo/abp.aspnetcore.mvc.ui.theme.leptonx": "~2.0.0",
-    "@volo/account": "~7.0.0"
+    "@volo/account": "~7.0.1"
   }
 }

@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
 	<Import Project="..\..\..\..\common.props" />
 
@@ -8,11 +8,11 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="7.0.0" />
-		<PackageReference Include="Volo.Abp.PermissionManagement.HttpApi" Version="7.0.0" />
-		<PackageReference Include="Volo.Abp.FeatureManagement.HttpApi" Version="7.0.0" />
-		<PackageReference Include="Volo.Abp.SettingManagement.HttpApi" Version="7.0.0" />
-		<PackageReference Include="Volo.Abp.TenantManagement.HttpApi" Version="7.0.0" />
+		<PackageReference Include="Volo.Abp.AspNetCore.Mvc" Version="7.0.1" />
+		<PackageReference Include="Volo.Abp.PermissionManagement.HttpApi" Version="7.0.1" />
+		<PackageReference Include="Volo.Abp.FeatureManagement.HttpApi" Version="7.0.1" />
+		<PackageReference Include="Volo.Abp.SettingManagement.HttpApi" Version="7.0.1" />
+		<PackageReference Include="Volo.Abp.TenantManagement.HttpApi" Version="7.0.1" />
 		<ProjectReference Include="..\FunShow.AdministrationService.Application.Contracts\FunShow.AdministrationService.Application.Contracts.csproj" />
 	</ItemGroup>
 

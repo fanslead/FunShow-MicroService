@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Volo.Abp.Http.Client.IdentityModel" Version="7.0.0" />
-    <PackageReference Include="Volo.Abp.Autofac" Version="7.0.0" />
+    <PackageReference Include="Volo.Abp.Http.Client.IdentityModel" Version="7.0.1" />
+    <PackageReference Include="Volo.Abp.Autofac" Version="7.0.1" />
     <ProjectReference Include="..\..\src\FunShow.IdentityService.HttpApi.Client\FunShow.IdentityService.HttpApi.Client.csproj" />
   </ItemGroup>
 
