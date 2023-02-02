@@ -28,10 +28,10 @@ public class FunShowSharedHostingModule : AbpModule
 
             options.Databases.Configure("AdministrationService", database =>
             {
-                database.MappedConnections.Add("AbpAuditLogging");
                 database.MappedConnections.Add("AbpPermissionManagement");
                 database.MappedConnections.Add("AbpSettingManagement");
                 database.MappedConnections.Add("AbpFeatureManagement");
+                database.MappedConnections.Add("AbpTenantManagement");
                 database.MappedConnections.Add("AbpBlobStoring");
             });
 
@@ -39,6 +39,11 @@ public class FunShowSharedHostingModule : AbpModule
             {
                 database.MappedConnections.Add("AbpIdentity");
                 database.MappedConnections.Add("OpenIddict");
+            });
+            
+            options.Databases.Configure("LoggingService", database =>
+            {
+                database.MappedConnections.Add("AbpAuditLogging");
             });
         });
     }

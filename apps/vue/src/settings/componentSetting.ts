@@ -9,13 +9,13 @@ export default {
     // support xxx.xxx.xxx
     fetchSetting: {
       // The field name of the current page passed to the background
-      pageField: 'page',
+      pageField: 'skipCount',
       // The number field name of each page displayed in the background
-      sizeField: 'pageSize',
+      sizeField: 'maxResultCount',
       // Field name of the form data returned by the interface
       listField: 'items',
       // Total number of tables returned by the interface field name
-      totalField: 'total',
+      totalField: 'totalCount',
     },
     // Number of pages that can be selected
     pageSizeOptions: ['10', '50', '80', '100'],
@@ -27,11 +27,12 @@ export default {
     defaultSortFn: (sortInfo: SorterResult) => {
       const { field, order } = sortInfo
       if (field && order) {
+        let sorting = ''
+        if (order == 'ascend') sorting = field
+        else if (order == 'descend') sorting = field + ' desc'
+        else return {}
         return {
-          // The sort field passed to the backend you
-          field,
-          // Sorting method passed to the background asc/desc
-          order,
+          sorting,
         }
       } else {
         return {}

@@ -42,6 +42,12 @@
         "Match": {
           "Path": "/api/setting-management/{**everything}"
         }
+      },
+      "tenant-management-route": {
+        "ClusterId": "administrationCluster",
+        "Match": {
+          "Path": "/api/multi-tenancy/{**everything}"
+        }
       }
     },
     "Clusters": {

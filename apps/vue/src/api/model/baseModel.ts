@@ -1,9 +1,11 @@
 export interface BasicPageParams {
-  page: number
-  pageSize: number
+  filter?: string
+  sorting?: string
+  skipCount: number
+  maxResultCount: number
 }
 
 export interface BasicFetchResult<T> {
   items: T[]
-  total: number
+  totalCount: number
 }

@@ -54,6 +54,10 @@ public class AdministrationServiceEntityFrameworkCoreModule : AbpModule
                     b.MigrationsHistoryTable("__AdministrationService_Migrations");
                 });
             });
+            options.Configure<IdentityDbContext>(c =>
+            {
+                c.UseNpgsql();
+            });
         });
     }
 }
