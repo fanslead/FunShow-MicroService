@@ -5,7 +5,7 @@ import { BasicPageParams, BasicFetchResult } from '/@/api/model/baseModel'
  */
 export type RoleParams = BasicPageParams
 
-export interface RoleCreateParams {
+export interface RoleCreateOrUpdateParams {
   name: string
   isDefault: boolean
   isPublic: boolean
@@ -18,6 +18,10 @@ export interface RoleItem {
   isDefault: boolean
   isStatic: boolean
   isPublic: boolean
+}
+
+export interface RolesItems {
+  items: Array<RoleItem>
 }
 /**
  * @description: Request list return value

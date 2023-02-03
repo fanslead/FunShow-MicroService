@@ -1,9 +1,20 @@
 import { BasicPageParams, BasicFetchResult } from '/@/api/model/baseModel'
-
 /**
  * @description: Request list interface parameters
  */
 export type UserParams = BasicPageParams
+
+export interface CreateOrUpdateUserParams {
+  userName: string
+  name: string
+  surname: string
+  email: string
+  phoneNumber: string
+  isActive: boolean
+  lockoutEnabled: boolean
+  roleNames: Array<string>
+  password: string
+}
 
 export interface UserItem {
   id: string
@@ -28,7 +39,6 @@ export interface UserItem {
   isDeleted: boolean
   lockoutEnd: boolean
 }
-
 /**
  * @description: Request list return value
  */
