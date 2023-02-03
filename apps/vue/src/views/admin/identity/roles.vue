@@ -29,7 +29,7 @@
         </template>
       </template>
     </BasicTable>
-    <AddRoleModal @register="addRoleModalRegister" />
+    <AddRoleModal @register="addRoleModalRegister" @close="reload" />
   </div>
 </template>
 <script lang="ts">
@@ -52,7 +52,7 @@
     setup() {
       const [addRoleModalRegister, { openModal: addRoleModalopenModal }] = useModal()
       const checkedKeys = ref<Array<string | number>>([])
-      const [registerTable, { getForm }] = useTable({
+      const [registerTable, { getForm, reload }] = useTable({
         title: '角色列表',
         api: roleListApi,
         columns: getColumns(),
@@ -111,12 +111,6 @@
             width: 200,
             sorter: true,
           },
-          {
-            title: '是否允许修改',
-            dataIndex: 'isStatic',
-            fixed: 'left',
-            width: 200,
-          },
         ]
       }
       function getFormConfig(): Partial<FormProps> {
@@ -153,6 +147,7 @@
         createActions,
         addRoleModalRegister,
         addRoleModalopenModal,
+        reload,
       }
     },
   })

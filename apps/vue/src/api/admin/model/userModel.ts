@@ -5,7 +5,7 @@ import { BasicPageParams, BasicFetchResult } from '/@/api/model/baseModel'
  */
 export type UserParams = BasicPageParams
 
-export interface UserListItem {
+export interface UserItem {
   id: string
   concurrencyStamp: string
   userName: string
@@ -32,4 +32,4 @@ export interface UserListItem {
 /**
  * @description: Request list return value
  */
-export type UserListGetResultModel = BasicFetchResult<UserListItem>
+export type UserListGetResultModel = BasicFetchResult<UserItem>

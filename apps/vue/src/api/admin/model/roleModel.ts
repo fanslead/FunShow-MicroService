@@ -5,7 +5,12 @@ import { BasicPageParams, BasicFetchResult } from '/@/api/model/baseModel'
  */
 export type RoleParams = BasicPageParams
 
-export interface RoleListItem {
+export interface RoleCreateParams {
+  name: string
+  isDefault: boolean
+  isPublic: boolean
+}
+export interface RoleItem {
   id: string
   concurrencyStamp: string
   name: string
@@ -14,8 +19,7 @@ export interface RoleListItem {
   isStatic: boolean
   isPublic: boolean
 }
-
 /**
  * @description: Request list return value
  */
-export type RoleListGetResultModel = BasicFetchResult<RoleListItem>
+export type RoleListGetResultModel = BasicFetchResult<RoleItem>
