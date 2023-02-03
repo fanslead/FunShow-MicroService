@@ -10,6 +10,7 @@ const tenant: AppRouteModule = {
   meta: {
     icon: 'ion:ios-keypad',
     title: t('routes.tenant.management'),
+    orderNo: 98,
   },
   children: [
     {

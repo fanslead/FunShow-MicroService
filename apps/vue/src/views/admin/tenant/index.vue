@@ -15,8 +15,9 @@
       </a-alert>
     </template>
     <template #toolbar>
-      <a-button type="primary" @click="getFormValues">新增租户</a-button>
+      <a-button type="primary" @click="openAddForm">新增租户</a-button>
     </template>
+    <AddModal @register="addFormModalRegister" />
   </BasicTable>
 </template>
 <script lang="ts">
@@ -24,10 +25,13 @@
   import { BasicColumn, BasicTable, FormProps, useTable } from '/@/components/Table'
   import { Alert } from 'ant-design-vue'
   import { tenantListApi } from '/@/api/admin/tenant'
+  import { useModal } from '/@/components/Modal'
+  import AddModal from './Modals/AddModal.vue'
   export default defineComponent({
-    components: { BasicTable, AAlert: Alert },
+    components: { BasicTable, AddModal, AAlert: Alert },
     setup() {
-      const checkedKeys = ref<Array<string | number>>([]);
+      const [addFormModalRegister, { openModal: openAddForm }] = useModal()
+      const checkedKeys = ref<Array<string | number>>([])
       const [registerTable, { getForm }] = useTable({
         title: '租户列表',
         api: tenantListApi,
@@ -48,7 +52,7 @@
         console.log(getForm().getFieldsValue())
       }
       function onSelectChange(selectedRowKeys: (string | number)[]) {
-        console.log(selectedRowKeys)
+        // console.log(selectedRowKeys)
         checkedKeys.value = selectedRowKeys
       }
 
@@ -70,7 +74,7 @@
           },
         ]
       }
-      function getFormConfig(): Partial<FormProps>{
+      function getFormConfig(): Partial<FormProps> {
         return {
           labelWidth: 100,
           schemas: [
@@ -87,6 +91,8 @@
         }
       }
       return {
+        addFormModalRegister,
+        openAddForm,
         registerTable,
         getFormValues,
         checkedKeys,

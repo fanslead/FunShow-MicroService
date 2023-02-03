@@ -56,29 +56,28 @@ export interface ColumnFilterItem {
 }
 
 export interface TableCustomRecord<T = Recordable> {
-  record?: T
-  index?: number
+  record?: T;
+  index?: number;
 }
 
 export interface SorterResult {
-  column: ColumnProps
-  order: SortOrder
-  field: string
-  columnKey: string
-  sorting: string
+  column: ColumnProps;
+  order: SortOrder;
+  field: string;
+  columnKey: string;
 }
 
 export interface FetchParams {
-  searchInfo?: Recordable
-  page?: number
-  sortInfo?: Recordable
-  filterInfo?: Recordable
+  searchInfo?: Recordable;
+  page?: number;
+  sortInfo?: Recordable;
+  filterInfo?: Recordable;
 }
 
 export interface GetColumnsParams {
-  ignoreIndex?: boolean
-  ignoreAction?: boolean
-  sort?: boolean
+  ignoreIndex?: boolean;
+  ignoreAction?: boolean;
+  sort?: boolean;
 }
 
 export type SizeType = 'default' | 'middle' | 'small' | 'large';
