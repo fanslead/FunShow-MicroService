@@ -1,33 +1,36 @@
 <template>
-  <BasicTable @register="registerTable">
-    <template #form-custom> custom-slot </template>
-    <template #headerTop>
-      <a-alert type="info" show-icon>
-        <template #message>
-          <template v-if="checkedKeys.length > 0">
-            <span>已选中{{ checkedKeys.length }}条记录(可跨页)</span>
-            <a-button type="link" @click="checkedKeys = []" size="small">清空</a-button>
+  <div>
+    <BasicTable @register="registerTable">
+      <template #form-custom> custom-slot </template>
+      <template #headerTop>
+        <a-alert type="info" show-icon>
+          <template #message>
+            <template v-if="checkedKeys.length > 0">
+              <span>已选中{{ checkedKeys.length }}条记录(可跨页)</span>
+              <a-button type="link" @click="checkedKeys = []" size="small">清空</a-button>
+            </template>
+            <template v-else>
+              <span>未选中任何项目</span>
+            </template>
           </template>
-          <template v-else>
-            <span>未选中任何项目</span>
-          </template>
+        </a-alert>
+      </template>
+      <template #toolbar>
+        <a-button type="primary" @click="addRoleModalopenModal">新增角色</a-button>
+      </template>
+      <template #bodyCell="{ column, record, text }">
+        <template v-if="column.key.indexOf('is') > -1">
+          <Tag :color="text ? 'green' : 'red'">
+            {{ text }}
+          </Tag>
         </template>
-      </a-alert>
-    </template>
-    <template #toolbar>
-      <a-button type="primary">新增角色</a-button>
-    </template>
-    <template #bodyCell="{ column, record, text }">
-      <template v-if="column.key.indexOf('is') > -1">
-        <Tag :color="text ? 'green' : 'red'">
-          {{ text }}
-        </Tag>
+        <template v-if="column.key === 'action'">
+          <TableAction :actions="createActions(record, column)" />
+        </template>
       </template>
-      <template v-if="column.key === 'action'">
-        <TableAction :actions="createActions(record, column)" />
-      </template>
-    </template>
-  </BasicTable>
+    </BasicTable>
+    <AddRoleModal @register="addRoleModalRegister" />
+  </div>
 </template>
 <script lang="ts">
   import { defineComponent, ref } from 'vue'
@@ -42,9 +45,12 @@
   } from '/@/components/Table'
   import { Alert, Tag } from 'ant-design-vue'
   import { roleListApi } from '/@/api/admin/roles'
+  import { useModal } from '/@/components/Modal'
+  import AddRoleModal from './Modals/AddRoleModal.vue'
   export default defineComponent({
-    components: { BasicTable, TableAction, AAlert: Alert, Tag },
+    components: { BasicTable, TableAction, AAlert: Alert, Tag, AddRoleModal },
     setup() {
+      const [addRoleModalRegister, { openModal: addRoleModalopenModal }] = useModal()
       const checkedKeys = ref<Array<string | number>>([])
       const [registerTable, { getForm }] = useTable({
         title: '角色列表',
@@ -145,6 +151,8 @@
         checkedKeys,
         onSelectChange,
         createActions,
+        addRoleModalRegister,
+        addRoleModalopenModal,
       }
     },
   })

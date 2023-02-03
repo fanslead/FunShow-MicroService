@@ -1,8 +1,14 @@
 import { defHttp } from '/@/utils/http/axios'
-import { TenantParams, TenantListGetResultModel } from './model/tenantModel'
+import {
+  TenantParams,
+  TenantListGetResultModel,
+  CreateTenantParams,
+  TenantItem,
+} from './model/tenantModel'
 
 enum Api {
-  Tenant_LIST = '/api/multi-tenancy/tenants',
+  LIST = '/api/multi-tenancy/tenants',
+  CREATE = '/api/multi-tenancy/tenants',
 }
 /**
  * @description: Get list value
@@ -12,7 +18,23 @@ export const tenantListApi = (params: TenantParams) => {
   params.skipCount = (params.skipCount - 1) * params.maxResultCount
   return defHttp.get<TenantListGetResultModel>(
     {
-      url: Api.Tenant_LIST,
+      url: Api.LIST,
+      params,
+      headers: {
+        // @ts-ignore
+        ignoreCancelToken: true,
+      },
+    },
+    {
+      isTransformResponse: false,
+    },
+  )
+}
+
+export const tenantCreateApi = (params: CreateTenantParams) => {
+  return defHttp.post<TenantItem>(
+    {
+      url: Api.LIST,
       params,
       headers: {
         // @ts-ignore

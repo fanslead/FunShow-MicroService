@@ -38,7 +38,7 @@
     FormProps,
     useTable,
     EditRecordRow,
-    ActionItem
+    ActionItem,
   } from '/@/components/Table'
   import { Alert, Tag } from 'ant-design-vue'
   import { userListApi } from '/@/api/admin/users'

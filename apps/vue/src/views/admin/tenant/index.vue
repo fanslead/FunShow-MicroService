@@ -1,38 +1,53 @@
 <template>
-  <BasicTable @register="registerTable">
-    <template #form-custom> custom-slot </template>
-    <template #headerTop>
-      <a-alert type="info" show-icon>
-        <template #message>
-          <template v-if="checkedKeys.length > 0">
-            <span>已选中{{ checkedKeys.length }}条记录(可跨页)</span>
-            <a-button type="link" @click="checkedKeys = []" size="small">清空</a-button>
+  <div>
+    <BasicTable @register="registerTable">
+      <template #form-custom> custom-slot </template>
+      <template #headerTop>
+        <a-alert type="info" show-icon>
+          <template #message>
+            <template v-if="checkedKeys.length > 0">
+              <span>已选中{{ checkedKeys.length }}条记录(可跨页)</span>
+              <a-button type="link" @click="checkedKeys = []" size="small">清空</a-button>
+            </template>
+            <template v-else>
+              <span>未选中任何项目</span>
+            </template>
           </template>
-          <template v-else>
-            <span>未选中任何项目</span>
-          </template>
+        </a-alert>
+      </template>
+      <template #toolbar>
+        <a-button type="primary" @click="openAddForm">新增租户</a-button>
+      </template>
+      <template #bodyCell="{ column, record }">
+        <template v-if="column.key === 'action'">
+          <TableAction :actions="createActions(record, column)" />
         </template>
-      </a-alert>
-    </template>
-    <template #toolbar>
-      <a-button type="primary" @click="openAddForm">新增租户</a-button>
-    </template>
-    <AddModal @register="addFormModalRegister" />
-  </BasicTable>
+      </template>
+    </BasicTable>
+    <AddModal @register="addFormModalRegister" @close="reload" />
+  </div>
 </template>
 <script lang="ts">
   import { defineComponent, ref } from 'vue'
-  import { BasicColumn, BasicTable, FormProps, useTable } from '/@/components/Table'
+  import {
+    BasicColumn,
+    BasicTable,
+    FormProps,
+    useTable,
+    TableAction,
+    EditRecordRow,
+    ActionItem,
+  } from '/@/components/Table'
   import { Alert } from 'ant-design-vue'
   import { tenantListApi } from '/@/api/admin/tenant'
   import { useModal } from '/@/components/Modal'
   import AddModal from './Modals/AddModal.vue'
   export default defineComponent({
-    components: { BasicTable, AddModal, AAlert: Alert },
+    components: { BasicTable, TableAction, AddModal, AAlert: Alert },
     setup() {
       const [addFormModalRegister, { openModal: openAddForm }] = useModal()
       const checkedKeys = ref<Array<string | number>>([])
-      const [registerTable, { getForm }] = useTable({
+      const [registerTable, { getForm, reload }] = useTable({
         title: '租户列表',
         api: tenantListApi,
         columns: getColumns(),
@@ -46,6 +61,12 @@
           type: 'checkbox',
           selectedRowKeys: checkedKeys,
           onChange: onSelectChange,
+        },
+        actionColumn: {
+          width: 160,
+          title: '操作',
+          dataIndex: 'action',
+          // slots: { customRender: 'action' },
         },
       })
       function getFormValues() {
@@ -90,6 +111,15 @@
           ],
         }
       }
+      function createActions(record: EditRecordRow, column: BasicColumn): ActionItem[] {
+        if (!record.editable) {
+          return [
+            {
+              label: '编辑',
+            },
+          ]
+        }
+      }
       return {
         addFormModalRegister,
         openAddForm,
@@ -97,6 +127,8 @@
         getFormValues,
         checkedKeys,
         onSelectChange,
+        createActions,
+        reload,
       }
     },
   })

@@ -5,7 +5,13 @@ import { BasicPageParams, BasicFetchResult } from '/@/api/model/baseModel'
  */
 export type TenantParams = BasicPageParams
 
-export interface TenantListItem {
+export interface CreateTenantParams {
+  name: string
+  adminEmailAddress: string
+  adminPassword: string
+}
+
+export interface TenantItem {
   id: string
   concurrencyStamp: string
   name: string
@@ -15,4 +21,4 @@ export interface TenantListItem {
 /**
  * @description: Request list return value
  */
-export type TenantListGetResultModel = BasicFetchResult<TenantListItem>
+export type TenantListGetResultModel = BasicFetchResult<TenantItem>
