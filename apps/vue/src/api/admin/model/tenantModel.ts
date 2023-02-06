@@ -10,6 +10,9 @@ export interface CreateTenantParams {
   adminEmailAddress: string
   adminPassword: string
 }
+export interface UpdateTenantParams {
+  name: string
+}
 
 export interface TenantItem {
   id: string

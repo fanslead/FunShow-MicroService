@@ -30,6 +30,7 @@
       </template>
     </BasicTable>
     <AddRoleModal @register="addRoleModalRegister" @close="reload" />
+    <UpdateRoleModal @register="updateRoleModalRegister" @close="reload" />
   </div>
 </template>
 <script lang="ts">
@@ -47,10 +48,12 @@
   import { roleListApi } from '/@/api/admin/roles'
   import { useModal } from '/@/components/Modal'
   import AddRoleModal from './Modals/AddRoleModal.vue'
+  import UpdateRoleModal from './Modals/UpdateRoleModal.vue'
   export default defineComponent({
-    components: { BasicTable, TableAction, AAlert: Alert, Tag, AddRoleModal },
+    components: { BasicTable, TableAction, AAlert: Alert, Tag, AddRoleModal, UpdateRoleModal },
     setup() {
       const [addRoleModalRegister, { openModal: addRoleModalopenModal }] = useModal()
+      const [updateRoleModalRegister, { openModal: updateRoleModalopenModal }] = useModal()
       const checkedKeys = ref<Array<string | number>>([])
       const [registerTable, { getForm, reload }] = useTable({
         title: '角色列表',
@@ -62,11 +65,11 @@
         tableSetting: { fullScreen: true },
         showIndexColumn: false,
         rowKey: 'id',
-        rowSelection: {
-          type: 'checkbox',
-          selectedRowKeys: checkedKeys,
-          onChange: onSelectChange,
-        },
+        // rowSelection: {
+        //   type: 'checkbox',
+        //   selectedRowKeys: checkedKeys,
+        //   onChange: onSelectChange,
+        // },
         actionColumn: {
           width: 160,
           title: '操作',
@@ -130,10 +133,11 @@
         }
       }
       function createActions(record: EditRecordRow, column: BasicColumn): ActionItem[] {
-        if (!record.editable) {
+        if (!record.isStatic) {
           return [
             {
               label: '编辑',
+              onClick: () => updateRoleModalopenModal(true, { id: record.id }),
             },
           ]
         }
@@ -147,6 +151,7 @@
         createActions,
         addRoleModalRegister,
         addRoleModalopenModal,
+        updateRoleModalRegister,
         reload,
       }
     },

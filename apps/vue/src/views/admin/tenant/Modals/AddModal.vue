@@ -82,6 +82,7 @@
           .catch((ex) => {
             console.log(ex)
             error('操作失败')
+            closeModal()
           })
       }
       return {

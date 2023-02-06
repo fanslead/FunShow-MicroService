@@ -25,6 +25,7 @@
       </template>
     </BasicTable>
     <AddModal @register="addFormModalRegister" @close="reload" />
+    <UpdateModal @register="updateFormModalRegister" @close="reload" />
   </div>
 </template>
 <script lang="ts">
@@ -42,10 +43,12 @@
   import { tenantListApi } from '/@/api/admin/tenant'
   import { useModal } from '/@/components/Modal'
   import AddModal from './Modals/AddModal.vue'
+  import UpdateModal from './Modals/UpdateModal.vue'
   export default defineComponent({
-    components: { BasicTable, TableAction, AddModal, AAlert: Alert },
+    components: { BasicTable, TableAction, AddModal, UpdateModal, AAlert: Alert },
     setup() {
       const [addFormModalRegister, { openModal: openAddForm }] = useModal()
+      const [updateFormModalRegister, { openModal: openUpdateForm }] = useModal()
       const checkedKeys = ref<Array<string | number>>([])
       const [registerTable, { getForm, reload }] = useTable({
         title: '租户列表',
@@ -112,16 +115,16 @@
         }
       }
       function createActions(record: EditRecordRow, column: BasicColumn): ActionItem[] {
-        if (!record.editable) {
-          return [
-            {
-              label: '编辑',
-            },
-          ]
-        }
+        return [
+          {
+            label: '编辑',
+            onClick: (_) => openUpdateForm(true, { id: record.id }),
+          },
+        ]
       }
       return {
         addFormModalRegister,
+        updateFormModalRegister,
         openAddForm,
         registerTable,
         getFormValues,
