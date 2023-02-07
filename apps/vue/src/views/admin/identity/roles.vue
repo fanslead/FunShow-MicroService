@@ -131,6 +131,7 @@
       function getFormConfig(): Partial<FormProps> {
         return {
           labelWidth: 100,
+          autoSubmitOnEnter: true,
           schemas: [
             {
               field: `filter`,
