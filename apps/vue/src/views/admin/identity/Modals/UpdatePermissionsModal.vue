@@ -32,7 +32,9 @@
     PermissionModel,
     PermissionGroupItem,
     UpdatePermissionParams,
+    UpdatePermissionsItem,
   } from '/@/api/admin/model/permissionModel'
+import { forEach } from 'lodash-es'
   export default defineComponent({
     components: { BasicModal, ScrollContainer, Tabs, TabPane, BasicTree },
     props: {
@@ -76,6 +78,21 @@
         // })
       }
       function handleOk() {
+        const permissions: Array<UpdatePermissionsItem> = []
+        modelRef.value.groups.forEach((g) => {
+          const asyncTreeAction: TreeActionType | null = unref(itemRefs[g.name])
+          const cks: string[] = asyncTreeAction?.getCheckedKeys()
+          g.permissions.forEach((p) => {
+            cks.forEach((s) => {
+              if (s.indexOf(p.name) > -1) {
+                permissions.push({ name: p.name, isGranted: true })
+              } else {
+                permissions.push({ name: p.name, isGranted: false })
+              }
+            })
+          })
+        })
+        selectPermission.value.permissions = permissions
         updatePermissions('R', roleRef.value, selectPermission.value)
           .then(() => {
             success('操作成功')
