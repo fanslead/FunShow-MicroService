@@ -31,6 +31,7 @@
     </BasicTable>
     <AddRoleModal @register="addRoleModalRegister" @close="reload" />
     <UpdateRoleModal @register="updateRoleModalRegister" @close="reload" />
+    <UpdatePermissionsModal @register="updatePermissionsModalRegister" @close="reload" />
   </div>
 </template>
 <script lang="ts">
@@ -49,11 +50,22 @@
   import { useModal } from '/@/components/Modal'
   import AddRoleModal from './Modals/AddRoleModal.vue'
   import UpdateRoleModal from './Modals/UpdateRoleModal.vue'
+  import UpdatePermissionsModal from './Modals/UpdatePermissionsModal.vue'
   export default defineComponent({
-    components: { BasicTable, TableAction, AAlert: Alert, Tag, AddRoleModal, UpdateRoleModal },
+    components: {
+      BasicTable,
+      TableAction,
+      AAlert: Alert,
+      Tag,
+      AddRoleModal,
+      UpdateRoleModal,
+      UpdatePermissionsModal,
+    },
     setup() {
       const [addRoleModalRegister, { openModal: addRoleModalopenModal }] = useModal()
       const [updateRoleModalRegister, { openModal: updateRoleModalopenModal }] = useModal()
+      const [updatePermissionsModalRegister, { openModal: updatePermissionsModalopenModal }] =
+        useModal()
       const checkedKeys = ref<Array<string | number>>([])
       const [registerTable, { getForm, reload }] = useTable({
         title: '角色列表',
@@ -133,14 +145,18 @@
         }
       }
       function createActions(record: EditRecordRow, column: BasicColumn): ActionItem[] {
+        let actionItems: ActionItem[] = []
         if (!record.isStatic) {
-          return [
-            {
-              label: '编辑',
-              onClick: () => updateRoleModalopenModal(true, { id: record.id }),
-            },
-          ]
+          actionItems.push({
+            label: '编辑',
+            onClick: () => updateRoleModalopenModal(true, { id: record.id }),
+          })
         }
+        actionItems.push({
+          label: '权限',
+          onClick: () => updatePermissionsModalopenModal(true, { name: record.name }),
+        })
+        return actionItems
       }
 
       return {
@@ -152,6 +168,7 @@
         addRoleModalRegister,
         addRoleModalopenModal,
         updateRoleModalRegister,
+        updatePermissionsModalRegister,
         reload,
       }
     },

@@ -15,6 +15,7 @@ export interface PermissionGroupItem {
   displayName: string
   displayNameKey: string
   displayNameResource: string
+  permissions: Array<PermissionsItem>
 }
 
 export interface PermissionModel {

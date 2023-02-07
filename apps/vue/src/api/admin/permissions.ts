@@ -9,7 +9,7 @@ enum Api {
 export const getPermissions = (providerName: string, providerKey: string) => {
   return defHttp.get<PermissionModel>(
     {
-      url: Api.GET + '?providerName=' + providerName + '$providerKey=' + providerKey,
+      url: Api.GET + '?providerName=' + providerName + '&providerKey=' + providerKey,
       headers: {
         // @ts-ignore
         ignoreCancelToken: true,
@@ -28,7 +28,7 @@ export const updatePermissions = (
 ) => {
   return defHttp.put(
     {
-      url: Api.UPDATE + '?providerName=' + providerName + '$providerKey=' + providerKey,
+      url: Api.UPDATE + '?providerName=' + providerName + '&$providerKey=' + providerKey,
       params,
       headers: {
         // @ts-ignore

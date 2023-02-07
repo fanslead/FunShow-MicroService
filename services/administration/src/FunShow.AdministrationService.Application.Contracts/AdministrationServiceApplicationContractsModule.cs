@@ -5,6 +5,7 @@ using Volo.Abp.FeatureManagement;
 using Volo.Abp.PermissionManagement;
 using Volo.Abp.SettingManagement;
 using Volo.Abp.TenantManagement;
+using Volo.Abp.Identity;
 
 namespace FunShow.AdministrationService;
 [DependsOn(
@@ -12,6 +13,7 @@ namespace FunShow.AdministrationService;
     typeof(AbpFeatureManagementApplicationContractsModule),
     typeof(AbpSettingManagementApplicationContractsModule),
     typeof(AbpTenantManagementApplicationContractsModule),
+    typeof(AbpIdentityApplicationContractsModule),
     typeof(AdministrationServiceDomainSharedModule),
     typeof(AbpDddApplicationContractsModule),
     typeof(AbpAuthorizationModule)
