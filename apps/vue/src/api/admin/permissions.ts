@@ -28,7 +28,7 @@ export const updatePermissions = (
 ) => {
   return defHttp.put(
     {
-      url: Api.UPDATE + '?providerName=' + providerName + '&$providerKey=' + providerKey,
+      url: Api.UPDATE + '?providerName=' + providerName + '&providerKey=' + providerKey,
       params,
       headers: {
         // @ts-ignore
