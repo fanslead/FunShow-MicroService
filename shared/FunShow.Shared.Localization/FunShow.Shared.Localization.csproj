@@ -14,4 +14,10 @@
     <ItemGroup>
         <PackageReference Include="Volo.Abp.Validation" Version="7.0.1" />
     </ItemGroup>
+    
+    <ItemGroup>
+        <EmbeddedResource Include="Localization\FunShow\*.json" />
+        <Content Remove="Localization\FunShow\*.json" />
+    </ItemGroup>
+
 </Project>

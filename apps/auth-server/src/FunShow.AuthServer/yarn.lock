@@ -729,10 +729,10 @@
   dependencies:
     "@abp/aspnetcore.mvc.ui.theme.shared" "~7.0.1"
 
-"@volo/abp.aspnetcore.mvc.ui.theme.leptonx@~2.0.0":
-  version "2.0.0"
-  resolved "https://registry.npmmirror.com/@volo/abp.aspnetcore.mvc.ui.theme.leptonx/-/abp.aspnetcore.mvc.ui.theme.leptonx-2.0.0.tgz#9741cf2fe5631b3e147c5194173ed4b3c2becc59"
-  integrity sha512-A/h6dgL47ePeu2t6ycxzqFWEskdYFEWU4TgzsirChaAeC4nXuITTZTpCbXLAngaUd0FM3rr5hnmpXHZu5gwmDA==
+"@volo/abp.aspnetcore.mvc.ui.theme.leptonx@~2.0.2":
+  version "2.0.2"
+  resolved "https://registry.npmmirror.com/@volo/abp.aspnetcore.mvc.ui.theme.leptonx/-/abp.aspnetcore.mvc.ui.theme.leptonx-2.0.2.tgz#b780e648606223912a3badfca90a15631eaa8ec4"
+  integrity sha512-qJ9DbMaJO3y9hTWcZsaDE0q2Cfw4oV+Y945C5WNo4ooTQK2vEbCuCGbHz7nTlT7aUU33wOF4WvWURX0M9bx1uw==
   dependencies:
     "@volo/abp.aspnetcore.mvc.ui.theme.commercial" "~7.0.0"
 

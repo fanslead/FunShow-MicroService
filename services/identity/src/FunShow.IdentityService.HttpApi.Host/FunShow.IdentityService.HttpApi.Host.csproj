@@ -18,6 +18,7 @@
 		<ProjectReference Include="..\..\src\FunShow.IdentityService.HttpApi\FunShow.IdentityService.HttpApi.csproj" />
 		<ProjectReference Include="..\..\src\FunShow.IdentityService.Application\FunShow.IdentityService.Application.csproj" />
 		<ProjectReference Include="..\..\src\FunShow.IdentityService.EntityFrameworkCore\FunShow.IdentityService.EntityFrameworkCore.csproj" />
+		<ProjectReference Include="..\..\..\..\shared\FunShow.Shared.Localization\FunShow.Shared.Localization.csproj" />
 		<ProjectReference Include="..\..\..\..\shared\FunShow.Shared.Hosting.Microservices\FunShow.Shared.Hosting.Microservices.csproj" />
 	</ItemGroup>
 

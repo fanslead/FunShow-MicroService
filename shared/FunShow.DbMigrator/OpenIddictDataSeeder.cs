@@ -144,7 +144,7 @@ public class OpenIddictDataSeeder : ITransientDependency
 
 
         //Vue Client
-        var vuerClientRootUrl = _configuration["OpenIddict:Applications:FunShow_Vue:RootUrl"].TrimEnd('/');
+        var vueClientRootUrl = _configuration["OpenIddict:Applications:FunShow_Vue:RootUrl"].TrimEnd('/');
         await CreateApplicationAsync(
             name: "FunShow_Vue",
             type: OpenIddictConstants.ClientTypes.Public,
@@ -160,10 +160,31 @@ public class OpenIddictDataSeeder : ITransientDependency
                 "Impersonation"
             },
             scopes: commonScopes.Union(new[] {"AccountService", "IdentityService", "AdministrationService", "LoggingService" }).ToList(),
-            redirectUris: new List<string> { $"{vuerClientRootUrl}" },
-            postLogoutRedirectUris: new List<string> { $"{vuerClientRootUrl}" }
+            redirectUris: new List<string> { $"{vueClientRootUrl}" },
+            postLogoutRedirectUris: new List<string> { $"{vueClientRootUrl}" }
         );
 
+
+        //Vue Client
+        var angularClientRootUrl = _configuration["OpenIddict:Applications:FunShow_Angular:RootUrl"].TrimEnd('/');
+        await CreateApplicationAsync(
+            name: "FunShow_Angular",
+            type: OpenIddictConstants.ClientTypes.Public,
+            consentType: OpenIddictConstants.ConsentTypes.Implicit,
+            displayName: "Angular Client",
+            secret: null,
+            grantTypes: new List<string>
+            {
+                OpenIddictConstants.GrantTypes.AuthorizationCode,
+                OpenIddictConstants.GrantTypes.RefreshToken,
+                OpenIddictConstants.GrantTypes.Password,
+                "LinkLogin",
+                "Impersonation"
+            },
+            scopes: commonScopes.Union(new[] {"AccountService", "IdentityService", "AdministrationService", "LoggingService" }).ToList(),
+            redirectUris: new List<string> { $"{angularClientRootUrl}" },
+            postLogoutRedirectUris: new List<string> { $"{angularClientRootUrl}" }
+        );
         //Administration Service Client
         await CreateApplicationAsync(
             name: "FunShow_AdministrationService",

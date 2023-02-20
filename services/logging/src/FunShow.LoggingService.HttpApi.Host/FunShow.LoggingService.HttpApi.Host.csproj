@@ -15,6 +15,7 @@
     </ItemGroup>
 
     <ItemGroup>        
+		<ProjectReference Include="..\..\..\..\shared\FunShow.Shared.Localization\FunShow.Shared.Localization.csproj" />
         <ProjectReference Include="..\..\..\..\shared\FunShow.Shared.Hosting.Microservices\FunShow.Shared.Hosting.Microservices.csproj" />
         <ProjectReference Include="..\FunShow.LoggingService.Application\FunShow.LoggingService.Application.csproj" />
         <ProjectReference Include="..\FunShow.LoggingService.EntityFrameworkCore\FunShow.LoggingService.EntityFrameworkCore.csproj" />

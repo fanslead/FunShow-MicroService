@@ -14,10 +14,12 @@ using FunShow.Shared.Hosting.AspNetCore;
 using Prometheus;
 using Volo.Abp;
 using Volo.Abp.Modularity;
+using FunShow.Shared.Localization;
 
 namespace FunShow.LoggingService;
 
 [DependsOn(
+    typeof(FunShowSharedLocalizationModule),
     typeof(FunShowSharedHostingMicroservicesModule),
     typeof(LoggingServiceApplicationModule),
     typeof(LoggingServiceHttpApiModule),
