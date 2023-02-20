@@ -15,12 +15,10 @@ using Volo.Abp;
 using Volo.Abp.Account;
 using Volo.Abp.Modularity;
 using Prometheus;
-using FunShow.Shared.Localization;
 
 namespace FunShow.IdentityService;
 
 [DependsOn(
-    typeof(FunShowSharedLocalizationModule),
     typeof(FunShowSharedHostingMicroservicesModule),
     typeof(IdentityServiceApplicationModule),
     typeof(IdentityServiceEntityFrameworkCoreModule),
