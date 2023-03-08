@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Com.Ctrip.Framework.Apollo.Logging;
 using FunShow.Shared.Hosting.AspNetCore;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Serilog;
@@ -24,6 +26,7 @@ public class Program
             builder.Host
                 .AddAppSettingsSecretsJson()
                 .UseAutofac()
+                .UseApollo()
                 .UseSerilog();
             await builder.AddApplicationAsync<IdentityServiceHttpApiHostModule>();
             var app = builder.Build();

@@ -14,7 +14,7 @@ export const environment = {
     redirectUri: baseUrl,
     clientId: 'FunShow_Angular',
     responseType: 'code',
-    scope: 'offline_access  AccountService IdentityService AdministrationService LoggingService',
+    scope: 'offline_access AccountService IdentityService AdministrationService LoggingService',
     requireHttps: true,
   },
   apis: {

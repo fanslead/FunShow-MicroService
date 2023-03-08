@@ -24,6 +24,7 @@ public class Program
             builder.Host
                 .AddAppSettingsSecretsJson()
                 .UseAutofac()
+                .UseApollo()
                 .UseSerilog();
             await builder.AddApplicationAsync<LoggingServiceHttpApiHostModule>();
             var app = builder.Build();

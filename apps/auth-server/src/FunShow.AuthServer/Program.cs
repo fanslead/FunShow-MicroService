@@ -23,6 +23,7 @@ public class Program
             builder.Host
                 .AddAppSettingsSecretsJson()
                 .UseAutofac()
+                .UseApollo()
                 .UseSerilog();
             await builder.AddApplicationAsync<FunShowAuthServerModule>();
             var app = builder.Build();

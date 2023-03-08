@@ -24,6 +24,7 @@ public class Program
                 .AddAppSettingsSecretsJson()
                 .AddYarpJson()
                 .UseAutofac()
+                .UseApollo()
                 .UseSerilog();
             await builder.AddApplicationAsync<FunShowWebGatewayModule>();
             var app = builder.Build();
